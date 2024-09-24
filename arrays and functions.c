@@ -12,30 +12,39 @@ int main(void) {
     }
     behind(array, N);
     for (i=0; i<N; i++) {
-        //printf("%d", array[i]);
+        printf("%d\n", array[i]);
     }
     
     return 0;
 }
 
+/* Write your function behind() here: */
+
+
 void behind(int *array, int N)
 {
     int index = 0;
     int numBigger;
-    numBigger = 0;
+    //int positionNumBigger;
+     numBigger = 0;
     while (index < N){
+       
 
-        if(numBigger < array[index + 1]){
-            
-           printf("es menor %d", numBigger);
+        if(array[index] > numBigger){
+            numBigger = array[index];
+            //positionNumBigger = index;
         }
-
-        
-        printf("%d", array[index]);
         index++;
-
+    }
+    index = 0;
+    while(index < N){
+        array[index] = numBigger - (array[index]) ;
+       
+    //printf(" %d\n", array[index]); 
+    
+    index++;
     }
     
-    printf("est es numbiger %d\n", numBigger);
+    
 
 }
